@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: #080B0D;
+  --surface: #101518;
+  --elevated: #151D20;
+  --line: #1E262A;
+  --ink: #F5F7F5;
+  --muted: #A0AAA5;
+  --accent: #39FF14;
+}
+
+html {
+  background: var(--canvas);
+  color-scheme: dark;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.prose-taleora {
+  line-height: 1.85;
+  font-size: 1.05rem;
+}
+.prose-taleora p { margin-bottom: 1.25em; }
+.prose-taleora h1, .prose-taleora h2, .prose-taleora h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 1.5em 0 0.5em;
+}
+.prose-taleora h1 { font-size: 2rem; }
+.prose-taleora h2 { font-size: 1.5rem; }
+.prose-taleora blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1em;
+  color: var(--muted);
+  margin: 1.5em 0;
+}
+.prose-taleora ul, .prose-taleora ol { padding-left: 1.5em; margin-bottom: 1.25em; }
+.prose-taleora li { margin-bottom: 0.4em; }
+
+/* TipTap editor */
+.editor-content:focus { outline: none; }
+.editor-content p { margin-bottom: 0.9em; }
+.editor-content h1 { font-size: 1.875rem; margin: 1.5em 0 0.5em; font-weight: 700; font-family: Georgia, serif; }
+.editor-content h2 { font-size: 1.5rem; margin: 1.5em 0 0.5em; font-weight: 700; font-family: Georgia, serif; }
+.editor-content h3 { font-size: 1.25rem; margin: 1.25em 0 0.5em; font-weight: 700; }
+.editor-content blockquote { border-left: 3px solid var(--accent); padding-left: 1em; color: var(--muted); margin: 1.25em 0; }
+.editor-content ul, .editor-content ol { padding-left: 1.5em; margin-bottom: 1em; }
+.editor-content li { margin-bottom: 0.35em; }
+.editor-content hr { border: none; border-top: 1px solid var(--line); margin: 2em 0; }
+.editor-content pre { background: var(--elevated); border: 1px solid var(--line); border-radius: 8px; padding: 1em; overflow-x: auto; margin: 1em 0; font-family: ui-monospace, monospace; font-size: 0.85em; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--canvas); }
+::-webkit-scrollbar-thumb { background: var(--line); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+.prose-skeleton { background: linear-gradient(90deg, var(--elevated) 25%, var(--surface) 50%, var(--elevated) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+.glow-accent { box-shadow: 0 0 0 1px rgba(57,255,20,0.2), 0 8px 40px rgba(57,255,20,0.07); }
